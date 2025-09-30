@@ -1,0 +1,103 @@
+.floatingInputContainer {
+  position: relative;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  height: 56px;
+}
+
+.inputWrapperActive {
+  border-color: var(--blue-normal, #077DD7);
+}
+
+.inputWrapperError {
+  border-color: var(--red-normal, #EF4444);
+}
+
+.inputWrapperDisabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.floatingInput {
+  width: 100%;
+  height: 100%;
+  padding: 0 16px;
+  border: 2px solid var(--gray-light, #E5E7EB);
+  border-radius: 8px;
+  background-color: var(--white, #FFFFFF);
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  z-index: 1;
+  position: relative;
+}
+
+.floatingInput:focus {
+  border-color: var(--blue-normal, #077DD7);
+  box-shadow: 0 0 0 3px rgba(7, 125, 215, 0.2);
+}
+
+.floatingInput:disabled {
+  background-color: var(--gray-light, #F3F4F6);
+  cursor: not-allowed;
+}
+
+.floatingLabel {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: var(--gray-medium, #9CA3AF);
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.floatingLabelActive {
+  top: 0;
+  transform: translateY(-50%) scale(0.85);
+  left: 12px;
+  padding: 0 4px;
+  background-color: var(--white, #FFFFFF);
+  color: var(--black-normal);
+  font-weight: 500;
+}
+
+.requiredMark {
+  color: var(--red-normal, #EF4444);
+  margin-left: 2px;
+}
+
+.errorMessage {
+  color: var(--red-normal, #EF4444);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Quando o input tem erro */
+.inputWrapperError .floatingInput {
+  border-color: var(--red-normal, #EF4444);
+}
+
+.inputWrapperError .floatingLabelActive {
+  color: var(--red-normal, #EF4444);
+}
+
+/* Quando o input está desabilitado */
+.inputWrapperDisabled .floatingInput,
+.inputWrapperDisabled .floatingLabel {
+  cursor: not-allowed;
+}
+
+.inputWrapperDisabled .floatingLabelActive {
+  color: var(--gray-medium, #9CA3AF);
+}

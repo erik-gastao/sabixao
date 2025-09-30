@@ -1,0 +1,37 @@
+.gameButton {
+  background-color: #077DD7;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px; /* full rounded */
+  border: 2px solid #005a9e;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.gameButton:hover {
+  filter: brightness(110%);
+}
+
+.gameButton:active {
+  filter: brightness(90%);
+  transform: scale(0.98);
+}
+
+.gameButtonDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.gameButtonDisabled:hover {
+  filter: none;
+}
+
+.gameButtonDisabled:active {
+  transform: none;
+}

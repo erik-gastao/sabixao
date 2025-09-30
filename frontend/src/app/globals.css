@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* Orange Colors */
+  --orange-light: #fff7ed;
+  --orange-light-hover: #ffedd5;
+  --orange-light-active: #fed7aa;
+  --orange-normal: #f97316;
+  --orange-normal-hover: #ea580c;
+  --orange-normal-active: #dc2626;
+  --orange-dark: #c2410c;
+  --orange-dark-hover: #9a3412;
+  --orange-dark-active: #7c2d12;
+  --orange-darker: #6c2e12;
+
+  /* Red Colors */
+  --red-light: #fef2f2;
+  --red-light-hover: #fecaca;
+  --red-light-active: #fca5a5;
+  --red-normal: #ef4444;
+  --red-normal-hover: #dc2626;
+  --red-normal-active: #b91c1c;
+  --red-dark: #991b1b;
+  --red-dark-hover: #7f1d1d;
+  --red-dark-active: #6f1d1d;
+  --red-darker: #5f1d1d;
+
+  /* Green Colors */
+  --green-light: #f0fdf4;
+  --green-light-hover: #dcfce7;
+  --green-light-active: #bbf7d0;
+  --green-normal: #22c55e;
+  --green-normal-hover: #16a34a;
+  --green-normal-active: #15803d;
+  --green-dark: #166534;
+  --green-dark-hover: #14532d;
+  --green-dark-active: #0f4722;
+  --green-darker: #0d3f1f;
+
+  /* Blue Colors */
+  --blue-light: #eff6ff;
+  --blue-light-hover: #dbeafe;
+  --blue-light-active: #bfdbfe;
+  --blue-normal: #3b82f6;
+  --blue-normal-hover: #2563eb;
+  --blue-normal-active: #1d4ed8;
+  --blue-dark: #1e40af;
+  --blue-dark-hover: #1e3a8a;
+  --blue-dark-active: #1e3a8a;
+  --blue-darker: #172554;
+  
+  /* Neutral Colors */
+  --white: #FFFFFF;
+  --black: #000000;
+  --gray-light: #F3F4F6;
+  --gray-medium: #9CA3AF;
+  --gray-dark: #374151;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: inherit; /* Vai usar a Baloo 2 definida no layout */
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
