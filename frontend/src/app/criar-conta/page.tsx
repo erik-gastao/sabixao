@@ -36,8 +36,8 @@ export default function CriarConta() {
             console.log('Criando conta:', { nome, email, password });
             setError('');
             // Aqui você faria a chamada para a API para criar a conta
-            // Após criar, redireciona para criar sala
-            router.push('/criar-sala');
+            // Após criar conta, redireciona para lista de salas
+            router.push('/lista-salas');
         } catch (err) {
             setError('Erro ao criar conta. Tente novamente.');
             console.error('Erro ao criar conta:', err);

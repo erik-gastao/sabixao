@@ -88,7 +88,7 @@ export default function Home() {
                             className={styles.gameButton}
                             onClick={handleCriarSala}
                         >
-                            CRIAR
+                            CRIAR SALA
                         </Button>
                     </div>
                 </form>
