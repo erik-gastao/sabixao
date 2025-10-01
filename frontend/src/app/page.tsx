@@ -49,6 +49,8 @@ export default function Home() {
             </div>
             
             <div className={styles.formContainer}>
+                <h2 className={styles.title}>Entrar ou Criar uma Sala</h2>
+                
                 {error && (
                     <div className={styles.errorMessage}>
                         {error}
