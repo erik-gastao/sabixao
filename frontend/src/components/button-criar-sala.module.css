@@ -1,0 +1,66 @@
+.buttonSala {
+  width: 100%;
+  max-width: 20rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #077DD7 0%, #0561B0 100%);
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  border-radius: 1rem;
+  border: 3px solid #004A8F;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.buttonSala:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  filter: brightness(110%);
+}
+
+.buttonSala:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.buttonNovaSala {
+  width: 100%;
+  max-width: 20rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #077DD7 0%, #0561B0 100%);
+  color: white;
+  font-weight: bold;
+  border-radius: 1rem;
+  border: 3px solid #004A8F;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonNovaSala:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  filter: brightness(110%);
+}
+
+.buttonNovaSala:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.iconPlus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nomeSala {
+  display: block;
+  text-align: center;
+}

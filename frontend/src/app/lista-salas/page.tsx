@@ -2,10 +2,18 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import ButtonCriarSala from '../../components/button-criar-sala';
 import styles from './lista-salas.module.css';
 
 export default function ListaSalas() {
     const router = useRouter();
+    
+    // Exemplo de salas criadas (futuramente virá da API)
+    const [salas, setSalas] = useState([
+        { id: 1, nome: 'Sala ABC' },
+        { id: 2, nome: 'Sala XYZ' },
+        { id: 3, nome: 'Quiz Matemática' },
+    ]);
 
     return (
         <div className={styles.listaSalasBackground}>
@@ -21,12 +29,20 @@ export default function ListaSalas() {
             </div>
             
             <div className={styles.container}>
-                <h1 className={styles.title}>Lista de Salas</h1>
+                <h1 className={styles.title}>Minhas Salas</h1>
                 
-                {/* Aqui será implementada a lista de salas conforme seu design */}
-                <p className={styles.placeholder}>
-                    Aguardando especificações do design...
-                </p>
+                <div className={styles.salasGrid}>
+                    {/* Botão de criar nova sala */}
+                    <ButtonCriarSala isNew />
+                    
+                    {/* Lista de salas existentes */}
+                    {salas.map((sala) => (
+                        <ButtonCriarSala 
+                            key={sala.id}
+                            nomeSala={sala.nome}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );
