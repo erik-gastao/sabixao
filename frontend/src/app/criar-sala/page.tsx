@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Button from '../../components/button';
 import Input from '../../components/input';
+import ButtonAdicionarSala from '../../components/button-adicionar-sala';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './criar-sala.module.css';
@@ -9,31 +10,35 @@ import styles from './criar-sala.module.css';
 export default function CriarSala() {
     const [nomeSala, setNomeSala] = useState('');
     const [error, setError] = useState('');
+    const [perguntas, setPerguntas] = useState<{ id: number; texto: string }[]>([
+        { id: 1, texto: 'Lorem ipsum dolor sit ama...' }
+    ]);
     const router = useRouter();
 
-    const handleCriarSala = async (e: React.FormEvent) => {
-        e.preventDefault();
-        
+    const handleCriarSala = async () => {
         if (!nomeSala) {
             setError('Por favor, digite o nome da sala');
             return;
         }
         
         try {
-            console.log('Criando sala:', { nomeSala });
+            console.log('Criando sala:', { nomeSala, perguntas });
             setError('');
             // Aqui você faria a chamada para a API para criar a sala
-            // Após criar, redireciona para a sala com o PIN gerado
-            // const pinGerado = '123456'; // Exemplo
-            // router.push('/sala/' + pinGerado);
+            // Após criar, redireciona para a lista de salas
+            router.push('/lista-salas');
         } catch (err) {
             setError('Erro ao criar sala. Tente novamente.');
             console.error('Erro ao criar sala:', err);
         }
     };
 
-    const handleVoltar = () => {
-        router.push('/lista-salas');
+    const handleAdicionarPergunta = () => {
+        const novaPergunta = {
+            id: perguntas.length + 1,
+            texto: 'Lorem ipsum dolor sit ama...'
+        };
+        setPerguntas([...perguntas, novaPergunta]);
     };
 
     return (
@@ -43,45 +48,64 @@ export default function CriarSala() {
                 <Image
                     src="/images/logo.png"
                     alt="Sabixão"
-                    width={300}
-                    height={300}
+                    width={200}
+                    height={200}
                     priority
                 />
             </div>
             
-            <div className={styles.formContainer}>
-                <h2 className={styles.title}>Criar Nova Sala</h2>
-                
-                {error && (
-                    <div className={styles.errorMessage}>
-                        {error}
-                    </div>
-                )}
-                
-                <form onSubmit={handleCriarSala} className={styles.formContent}>
+            <div className={styles.formWrapper}>
+                {/* Nome da Sala */}
+                <div className={styles.nomeSalaContainer}>
+                    <label className={styles.label}>Nome da sala:</label>
                     <Input 
-                        label="Nome da Sala"
+                        label="INPUT"
                         type="text"
                         value={nomeSala}
                         onChange={(e) => setNomeSala(e.target.value)}
                         required
                     />
+                </div>
+
+                {/* Lista de Perguntas */}
+                <div className={styles.perguntasContainer}>
+                    <h3 className={styles.perguntasTitle}>N°</h3>
                     
-                    <div className={styles.buttonContainer}>
-                        <Button 
-                            type="button" 
-                            className={styles.gameButton}
-                            onClick={handleVoltar}
-                        >
-                            VOLTAR
-                        </Button>
+                    <div className={styles.perguntasList}>
+                        {/* Primeira pergunta */}
+                        {perguntas.map((pergunta) => (
+                            <ButtonAdicionarSala 
+                                key={pergunta.id}
+                                numeroSala={pergunta.id}
+                                descricaoSala={pergunta.texto}
+                            />
+                        ))}
                         
-                        <Button type="submit" className={styles.gameButton}>
-                            CRIAR SALA
-                        </Button>
+                        {/* Botões de adicionar */}
+                        <ButtonAdicionarSala isNew onClick={handleAdicionarPergunta} />
+                        <ButtonAdicionarSala isNew onClick={handleAdicionarPergunta} />
+                        <ButtonAdicionarSala isNew onClick={handleAdicionarPergunta} />
                     </div>
-                </form>
+                </div>
+
+                {/* Botão Criar */}
+                <div className={styles.criarButtonContainer}>
+                    <Button 
+                        type="button" 
+                        className={styles.criarButton}
+                        onClick={handleCriarSala}
+                    >
+                        CRIAR
+                    </Button>
+                </div>
             </div>
+
+            {error && (
+                <div className={styles.errorMessage}>
+                    {error}
+                </div>
+            )}
         </div>
     );
 }
+

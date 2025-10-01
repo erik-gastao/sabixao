@@ -9,8 +9,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  padding: 2rem;
+  position: relative;
 }
 
 .logoContainer {
@@ -19,45 +19,85 @@
   margin-bottom: 2rem;
 }
 
-.formContainer {
+.formWrapper {
   width: 100%;
-  max-width: 28rem;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(4px);
-  border-radius: 1rem;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
-}
-
-.title {
-  text-align: center;
-  font-size: 1.875rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: #1f2937;
-}
-
-.formContent {
+  max-width: 50rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
-.buttonContainer {
+.nomeSalaContainer {
   display: flex;
+  align-items: center;
   gap: 1rem;
-  margin-top: 1rem;
+  justify-content: center;
 }
 
-.buttonContainer button {
-  flex: 1;
+.label {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  white-space: nowrap;
 }
 
-.gameButton {
+.perguntasContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.perguntasTitle {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  margin-bottom: 0.5rem;
+}
+
+.perguntasList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 20rem;
+  max-height: 25rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.perguntasList::-webkit-scrollbar {
+  width: 8px;
+}
+
+.perguntasList::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.perguntasList::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+.perguntasList::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.criarButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 2rem;
+}
+
+.criarButton {
   background-color: #077DD7;
   color: white;
   font-weight: bold;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 3rem;
   border-radius: 9999px;
   border: 2px solid #005a9e;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -68,11 +108,11 @@
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.gameButton:hover {
+.criarButton:hover {
   filter: brightness(110%);
 }
 
-.gameButton:active {
+.criarButton:active {
   filter: brightness(90%);
   transform: scale(0.98);
 }
@@ -83,6 +123,9 @@
   color: #dc2626;
   padding: 0.75rem 1rem;
   border-radius: 0.375rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   font-size: 0.95rem;
+  max-width: 28rem;
+  text-align: center;
 }
+
