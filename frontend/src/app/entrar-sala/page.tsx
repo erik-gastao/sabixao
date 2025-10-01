@@ -42,8 +42,8 @@ export default function EntrarSala() {
                 <Image
                     src="/images/logo.png"
                     alt="Sabixão"
-                    width={280}
-                    height={140}
+                    width={300}
+                    height={300}
                     priority
                 />
             </div>
