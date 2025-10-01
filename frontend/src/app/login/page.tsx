@@ -36,7 +36,7 @@ export default function Login() {
     };
 
     const handleEntrarSala = () => {
-        router.push('/entrar-sala');
+        router.push('/');
     };
 
     return (
