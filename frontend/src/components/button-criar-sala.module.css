@@ -1,6 +1,7 @@
 .buttonSala {
   width: 100%;
   max-width: 20rem;
+  min-height: 5rem;
   padding: 1.5rem 2rem;
   background: linear-gradient(135deg, #077DD7 0%, #0561B0 100%);
   color: white;
@@ -13,6 +14,9 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .buttonSala:hover {
@@ -29,6 +33,7 @@
 .buttonNovaSala {
   width: 100%;
   max-width: 20rem;
+  min-height: 5rem;
   padding: 1.5rem 2rem;
   background: linear-gradient(135deg, #077DD7 0%, #0561B0 100%);
   color: white;
