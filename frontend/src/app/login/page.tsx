@@ -46,8 +46,8 @@ export default function Login() {
                 <Image
                     src="/images/logo.png"
                     alt="Sabixão"
-                    width={280}
-                    height={140}
+                    width={300}
+                    height={300}
                     priority
                 />
             </div>
@@ -78,7 +78,7 @@ export default function Login() {
                         required
                     />
                     
-                    {/* Botões ENTRAR e CRIAR lado a lado */}
+                    {/* Botões ENTRAR e CRIAR CONTA lado a lado */}
                     <div className={styles.buttonContainer}>
                         <Button type="submit" className={styles.gameButton}>
                             ENTRAR
@@ -89,7 +89,7 @@ export default function Login() {
                             className={styles.gameButton}
                             onClick={handleCriarConta}
                         >
-                            CRIAR
+                            CRIAR CONTA
                         </Button>
                     </div>
                     
