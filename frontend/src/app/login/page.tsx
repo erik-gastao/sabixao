@@ -32,7 +32,7 @@ export default function Login() {
     };
 
     const handleCriarConta = () => {
-        router.push('/register');
+        router.push('/criar-conta');
     };
 
     const handleEntrarSala = () => {
