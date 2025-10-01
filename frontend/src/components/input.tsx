@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import styles from '../styles/components/input.module.css';
+import styles from './input.module.css';
 
 interface InputProps {
     type?: 'text' | 'email' | 'password' | 'number' | 'search';
