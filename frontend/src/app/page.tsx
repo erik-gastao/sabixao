@@ -32,9 +32,7 @@ export default function Home() {
     };
 
     const handleCriarSala = () => {
-        // Redirecionar para página de criar sala ou abrir modal
-        console.log('Criar sala clicado');
-        // router.push('/criar-sala');
+        router.push('/login');
     };
 
     return (

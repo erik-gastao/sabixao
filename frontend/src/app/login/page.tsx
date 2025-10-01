@@ -23,7 +23,8 @@ export default function Login() {
         try {
             console.log('Tentando login com:', { email, password });
             setError('');
-            router.push('/');
+            // Após login bem-sucedido, redireciona para criar sala
+            router.push('/criar-sala');
         } catch (err) {
             setError('Email ou senha incorretos');
             console.error('Erro de login:', err);
