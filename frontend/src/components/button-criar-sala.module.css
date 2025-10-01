@@ -1,7 +1,7 @@
 .buttonSala {
   width: 100%;
   max-width: 20rem;
-  min-height: 5rem;
+  height: 5rem;
   padding: 1.5rem 2rem;
   background: linear-gradient(135deg, #077DD7 0%, #0561B0 100%);
   color: white;
@@ -33,7 +33,7 @@
 .buttonNovaSala {
   width: 100%;
   max-width: 20rem;
-  min-height: 5rem;
+  height: 5rem;
   padding: 1.5rem 2rem;
   background: linear-gradient(135deg, #077DD7 0%, #0561B0 100%);
   color: white;
