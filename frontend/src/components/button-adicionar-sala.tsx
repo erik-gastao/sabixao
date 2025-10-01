@@ -3,14 +3,14 @@ import { useRouter } from 'next/navigation';
 import styles from './button-adicionar-sala.module.css';
 
 interface ButtonAdicionarSalaProps {
-    numeroSala?: number;
+    nomePergunta?: string;
     descricaoSala?: string;
     isNew?: boolean;
     onClick?: () => void;
 }
 
 export default function ButtonAdicionarSala({ 
-    numeroSala,
+    nomePergunta,
     descricaoSala = "Lorem ipsum dolor sit ama...",
     isNew = false,
     onClick 
@@ -27,10 +27,10 @@ export default function ButtonAdicionarSala({
 
     return (
         <div className={styles.buttonWrapper}>
-            {/* Botão com N° e descrição */}
-            {!isNew && numeroSala && (
+            {/* Botão com nome e descrição */}
+            {!isNew && nomePergunta && (
                 <button className={styles.buttonDescricao} onClick={handleClick}>
-                    <span className={styles.numero}>N° {numeroSala}</span>
+                    <span className={styles.numero}>{nomePergunta}</span>
                     <span className={styles.descricao}>{descricaoSala}</span>
                 </button>
             )}

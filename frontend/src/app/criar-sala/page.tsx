@@ -10,8 +10,8 @@ import styles from './criar-sala.module.css';
 export default function CriarSala() {
     const [nomeSala, setNomeSala] = useState('');
     const [error, setError] = useState('');
-    const [perguntas, setPerguntas] = useState<{ id: number; texto: string }[]>([
-        { id: 1, texto: 'Lorem ipsum dolor sit ama...' }
+    const [perguntas, setPerguntas] = useState<{ id: number; nome: string; texto: string }[]>([
+        { id: 1, nome: 'N° 1', texto: 'Lorem ipsum dolor sit ama...' }
     ]);
     const router = useRouter();
 
@@ -36,6 +36,7 @@ export default function CriarSala() {
     const handleAdicionarPergunta = () => {
         const novaPergunta = {
             id: perguntas.length + 1,
+            nome: `N° ${perguntas.length + 1}`,
             texto: 'Lorem ipsum dolor sit ama...'
         };
         setPerguntas([...perguntas, novaPergunta]);
@@ -72,11 +73,11 @@ export default function CriarSala() {
                     <h3 className={styles.perguntasTitle}>N°</h3>
                     
                     <div className={styles.perguntasList}>
-                        {/* Primeira pergunta */}
+                        {/* Lista de perguntas */}
                         {perguntas.map((pergunta) => (
                             <ButtonAdicionarSala 
                                 key={pergunta.id}
-                                numeroSala={pergunta.id}
+                                nomePergunta={pergunta.nome}
                                 descricaoSala={pergunta.texto}
                             />
                         ))}
