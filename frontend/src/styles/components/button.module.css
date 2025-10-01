@@ -14,24 +14,72 @@
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.gameButton:hover {
+.gameButtonFixed {
+  background-color: #077DD7;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid #005a9e;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  width: 250px; /* Tamanho fixo */
+}
+
+/* Nova versão centralizada */
+.gameButtonCentered {
+  background-color: #077DD7;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid #005a9e;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  width: 200px; /* Reduzi um pouco a largura */
+  margin: 0 auto; /* Centraliza o botão */
+  display: block; /* Necessário para margin auto funcionar */
+}
+
+.gameButton:hover,
+.gameButtonFixed:hover,
+.gameButtonCentered:hover {
   filter: brightness(110%);
 }
 
-.gameButton:active {
+.gameButton:active,
+.gameButtonFixed:active,
+.gameButtonCentered:active {
   filter: brightness(90%);
   transform: scale(0.98);
 }
 
-.gameButtonDisabled {
+.gameButtonDisabled,
+.gameButtonFixedDisabled,
+.gameButtonCenteredDisabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.gameButtonDisabled:hover {
+.gameButtonDisabled:hover,
+.gameButtonFixedDisabled:hover,
+.gameButtonCenteredDisabled:hover {
   filter: none;
 }
 
-.gameButtonDisabled:active {
+.gameButtonDisabled:active,
+.gameButtonFixedDisabled:active,
+.gameButtonCenteredDisabled:active {
   transform: none;
 }
+

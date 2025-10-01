@@ -30,6 +30,14 @@ export default function Login() {
         }
     };
 
+    const handleCriarConta = () => {
+        router.push('/register');
+    };
+
+    const handleEntrarSala = () => {
+        router.push('/entrar-sala');
+    };
+
     return (
         <div className={styles.loginBackground}>
             {/* Logo fora do formulário */}
@@ -44,15 +52,15 @@ export default function Login() {
             </div>
             
             <div className={styles.formContainer}>
-                <h2 className="text-xl font-bold text-center mb-4">Login</h2>
+                <h2 className={styles.title}>Login</h2>
                 
                 {error && (
-                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                    <div className={styles.errorMessage}>
                         {error}
                     </div>
                 )}
                 
-                <form onSubmit={handleLogin} className="space-y-6">
+                <form onSubmit={handleLogin} className={styles.floatingInputContainer}>
                     <Input 
                         label="Email"
                         type="email"
@@ -69,19 +77,41 @@ export default function Login() {
                         required
                     />
                     
-                    <Button type="submit" className="w-full">
-                        ENTRAR
-                    </Button>
+                    {/* Botões ENTRAR e CRIAR lado a lado */}
+                    <div className={styles.buttonContainer}>
+                        <Button type="submit" className={styles.gameButton}>
+                            ENTRAR
+                        </Button>
+                        
+                        <Button 
+                            type="button" 
+                            className={styles.gameButton}
+                            onClick={handleCriarConta}
+                        >
+                            CRIAR
+                        </Button>
+                    </div>
+                    
+                    {/* Botão ENTRAR NA SALA - centralizado */}
+                    <div className={styles.centerButtonContainer}>
+                        <Button 
+                            type="button" 
+                            className={styles.gameButtonCentered}
+                            onClick={handleEntrarSala}
+                        >
+                            ENTRAR EM UMA SALA
+                        </Button>
+                    </div>
                 </form>
                 
-                <div className="text-center mt-4">
-                    <p className="text-gray-800">
-                        Não tem uma conta? 
+                <div className={styles.forgotPasswordContainer}>
+                    <p className={styles.forgotPasswordText}>
+                        Esqueceu sua senha? 
                         <button 
-                            className="text-blue-600 ml-1 hover:underline focus:outline-none"
-                            onClick={() => router.push('/register')}
+                            className={styles.forgotPasswordLink}
+                            onClick={() => router.push('/forgot-password')}
                         >
-                            Registre-se
+                            Recuperar
                         </button>
                     </p>
                 </div>

@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Button from '../components/button';
 import Input from '../components/input';
+import styles from './page.module.css';
 
 export default function TelaInicial() {
     const [nome, setNome] = useState('');
@@ -11,10 +12,10 @@ export default function TelaInicial() {
     };
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gray-100">
-            <h1 className="text-3xl font-bold mb-8">Sabixão</h1>
+        <div className={styles.container}>
+            <h1 className={styles.title}>Sabixão</h1>
             
-            <div className="w-full max-w-md space-y-6">
+            <div className={styles.formWrapper}>
                 <Input 
                     label="Nome da Sala"
                     value={nome}
@@ -22,7 +23,7 @@ export default function TelaInicial() {
                     required
                 />
                 
-                <Button onClick={handleCriar} className="w-full">
+                <Button onClick={handleCriar} className={styles.createButton}>
                     CRIAR
                 </Button>
             </div>
