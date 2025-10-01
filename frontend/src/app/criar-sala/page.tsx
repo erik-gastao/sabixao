@@ -33,7 +33,7 @@ export default function CriarSala() {
     };
 
     const handleVoltar = () => {
-        router.push('/');
+        router.push('/lista-salas');
     };
 
     return (
