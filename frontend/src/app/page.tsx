@@ -24,8 +24,10 @@ export default function Home() {
         try {
             console.log('Entrando na sala:', { nomeJogador, pinSala });
             setError('');
-            // Aqui você faria a chamada para a API para entrar na sala
-            // router.push('/sala/' + pinSala);
+            
+            // Aqui você faria a chamada para a API para validar o PIN e entrar na sala
+            // Por enquanto, redireciona direto para a página de espera
+            router.push(`/espera/${pinSala}`);
         } catch (err) {
             setError('Sala não encontrada ou PIN incorreto');
             console.error('Erro ao entrar na sala:', err);

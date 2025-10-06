@@ -44,7 +44,7 @@ export default function EditableInput({
     return (
         <div className={styles.editableInputContainer}>
             <Input 
-                label={isEditing ? "INPUT*" : value}
+                label={value}
                 type="text"
                 value={isEditing ? tempValue : value}
                 onChange={(e) => setTempValue(e.target.value)}

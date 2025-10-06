@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from 'next/navigation';
+import DeleteIconButton from './delete-icon-button';
 import styles from './button-adicionar-sala.module.css';
 
 interface ButtonAdicionarSalaProps {
@@ -9,6 +10,7 @@ interface ButtonAdicionarSalaProps {
     onClick?: () => void;
     questaoId?: number | string;
     salaId?: number | string;
+    onDelete?: () => void;
 }
 
 export default function ButtonAdicionarSala({ 
@@ -17,7 +19,8 @@ export default function ButtonAdicionarSala({
     isNew = false,
     onClick,
     questaoId,
-    salaId
+    salaId,
+    onDelete
 }: ButtonAdicionarSalaProps) {
     const router = useRouter();
 
@@ -32,6 +35,13 @@ export default function ButtonAdicionarSala({
         }
     };
 
+    const handleDelete = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        if (onDelete) {
+            onDelete();
+        }
+    };
+
     return (
         <div className={styles.buttonWrapper}>
             {/* Botão com nome e descrição */}
@@ -41,6 +51,11 @@ export default function ButtonAdicionarSala({
                     <button className={styles.buttonDescricao} onClick={handleClick}>
                         <span className={styles.descricao}>{descricaoSala}</span>
                     </button>
+                    {onDelete && (
+                        <div className={styles.deleteButtonContainer}>
+                            <DeleteIconButton onClick={handleDelete} />
+                        </div>
+                    )}
                 </div>
             )}
             

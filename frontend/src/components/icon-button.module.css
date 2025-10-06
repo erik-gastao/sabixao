@@ -6,10 +6,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  transition: color 0.2s, background-color 0.2s;
   border-radius: 0.25rem;
   font-size: 1.25rem;
   font-weight: bold;
+  line-height: 1;
 }
 
 .iconButton:disabled {
@@ -24,7 +25,6 @@
 
 .editButton:hover:not(:disabled) {
   color: #2563eb;
-  transform: scale(1.1);
 }
 
 /* Save Button */
@@ -36,7 +36,6 @@
 
 .saveButton:hover:not(:disabled) {
   background-color: #d1fae5;
-  transform: scale(1.1);
 }
 
 /* Cancel Button */
@@ -48,7 +47,6 @@
 
 .cancelButton:hover:not(:disabled) {
   background-color: #fee2e2;
-  transform: scale(1.1);
 }
 
 /* Delete Button */
@@ -59,7 +57,6 @@
 .deleteButton:hover:not(:disabled) {
   color: #991b1b;
   background-color: #fee2e2;
-  transform: scale(1.1);
 }
 
 /* Add Button */
@@ -70,5 +67,4 @@
 .addButton:hover:not(:disabled) {
   color: #1d4ed8;
   background-color: #dbeafe;
-  transform: scale(1.1);
 }

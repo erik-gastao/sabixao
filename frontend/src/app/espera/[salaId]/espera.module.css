@@ -1,0 +1,181 @@
+.esperaBackground {
+  background-image: url('/images/background-wait.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.languageContainer {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+.logoContainer {
+  margin-bottom: 2rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 40rem;
+}
+
+.codigoSala {
+  background: linear-gradient(135deg, #077DD7 0%, #0561B0 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  border: 3px solid #004A8F;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.codigo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  margin-left: 0.5rem;
+}
+
+.status {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.jogadoresList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 30rem;
+}
+
+.jogadorCard {
+  background: linear-gradient(135deg, #077DD7 0%, #0561B0 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  border: 3px solid #004A8F;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.jogadorCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.avatar {
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.jogadorNome {
+  flex: 1;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+}
+
+.buttonContainer {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnComecar {
+  min-width: 12rem;
+  font-size: 1.25rem;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, #28a745 0%, #20873a 100%);
+  border-color: #1e7e34;
+}
+
+.btnComecar:hover {
+  background: linear-gradient(135deg, #34ce57 0%, #28a745 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.btnSair {
+  min-width: 12rem;
+  font-size: 1.25rem;
+  padding: 0.875rem 2rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .logoContainer {
+    width: 150px;
+    height: 150px;
+  }
+
+  .codigoSala {
+    font-size: 1rem;
+  }
+
+  .codigo {
+    font-size: 1.25rem;
+  }
+
+  .status {
+    font-size: 1.25rem;
+  }
+
+  .jogadorCard {
+    padding: 0.875rem 1.25rem;
+  }
+
+  .jogadorNome {
+    font-size: 1rem;
+  }
+}

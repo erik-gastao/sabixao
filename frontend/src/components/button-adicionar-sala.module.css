@@ -7,9 +7,15 @@
 
 .perguntaRow {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
   width: 100%;
+  position: relative;
+}
+
+.deleteButtonContainer {
+  display: flex;
+  align-items: center;
 }
 
 .nLabel {

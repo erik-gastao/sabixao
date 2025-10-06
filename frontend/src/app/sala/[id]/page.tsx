@@ -40,9 +40,13 @@ export default function Sala() {
         setQuestoes([...questoes, novaQuestao]);
     };
 
+    const handleDeletarQuestao = (questaoId: number) => {
+        setQuestoes(questoes.filter(q => q.id !== questaoId));
+        console.log('Questão deletada:', questaoId);
+    };
+
     const handleIniciarQuiz = () => {
-        console.log('Iniciando quiz da sala:', salaId);
-        // Lógica para iniciar o quiz
+        router.push(`/espera/${salaId}`);
     };
 
     const handleNomeChange = (novoNome: string) => {
@@ -106,6 +110,7 @@ export default function Sala() {
                                 descricaoSala={questao.texto}
                                 questaoId={questao.id}
                                 salaId={salaId as string}
+                                onDelete={() => handleDeletarQuestao(questao.id)}
                             />
                         ))}
                         
