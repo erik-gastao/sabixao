@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Button from '../components/button';
 import Input from '../components/input';
+import Language from '../components/language';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './page.module.css';
@@ -37,6 +38,11 @@ export default function Home() {
 
     return (
         <div className={styles.homeBackground}>
+            {/* Componente Language no canto superior direito */}
+            <div className={styles.languageContainer}>
+                <Language />
+            </div>
+            
             {/* Logo */}
             <div className={styles.logoContainer}>
                 <Image

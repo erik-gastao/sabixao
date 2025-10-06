@@ -53,20 +53,12 @@
   gap: 1rem;
 }
 
-.perguntasTitle {
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
-  margin-bottom: 0.5rem;
-}
-
 .perguntasList {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   width: 100%;
-  max-width: 20rem;
+  max-width: 28rem;
   max-height: 25rem;
   overflow-y: auto;
   padding-right: 0.5rem;

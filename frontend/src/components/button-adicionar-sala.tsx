@@ -29,25 +29,30 @@ export default function ButtonAdicionarSala({
         <div className={styles.buttonWrapper}>
             {/* Botão com nome e descrição */}
             {!isNew && nomePergunta && (
-                <button className={styles.buttonDescricao} onClick={handleClick}>
-                    <span className={styles.numero}>{nomePergunta}</span>
-                    <span className={styles.descricao}>{descricaoSala}</span>
-                </button>
+                <div className={styles.perguntaRow}>
+                    <span className={styles.nLabel}>N°</span>
+                    <button className={styles.buttonDescricao} onClick={handleClick}>
+                        <span className={styles.numero}>{nomePergunta}</span>
+                        <span className={styles.descricao}>{descricaoSala}</span>
+                    </button>
+                </div>
             )}
             
             {/* Botão de adicionar */}
-            <button 
-                className={isNew ? styles.buttonNovo : styles.buttonAdicionar}
-                onClick={handleClick}
-            >
-                <div className={styles.iconPlus}>
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                        <rect x="2" y="2" width="36" height="36" rx="4" stroke="white" strokeWidth="3"/>
-                        <line x1="20" y1="10" x2="20" y2="30" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-                        <line x1="10" y1="20" x2="30" y2="20" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-                    </svg>
-                </div>
-            </button>
+            {isNew && (
+                <button 
+                    className={styles.buttonNovo}
+                    onClick={handleClick}
+                >
+                    <div className={styles.iconPlus}>
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect x="2" y="2" width="36" height="36" rx="4" stroke="white" strokeWidth="3"/>
+                            <line x1="20" y1="10" x2="20" y2="30" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                            <line x1="10" y1="20" x2="30" y2="20" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                        </svg>
+                    </div>
+                </button>
+            )}
         </div>
     );
 }

@@ -70,8 +70,6 @@ export default function CriarSala() {
 
                 {/* Lista de Perguntas */}
                 <div className={styles.perguntasContainer}>
-                    <h3 className={styles.perguntasTitle}>N°</h3>
-                    
                     <div className={styles.perguntasList}>
                         {/* Lista de perguntas */}
                         {perguntas.map((pergunta) => (

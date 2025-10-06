@@ -3,11 +3,26 @@
   flex-direction: column;
   gap: 0.75rem;
   width: 100%;
-  max-width: 20rem;
+}
+
+.perguntaRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+
+.nLabel {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  padding-top: 1rem;
+  white-space: nowrap;
 }
 
 .buttonDescricao {
-  width: 100%;
+  flex: 1;
   padding: 1rem 1.5rem;
   background: linear-gradient(135deg, #077DD7 0%, #0561B0 100%);
   color: white;
