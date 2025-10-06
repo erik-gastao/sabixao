@@ -1,0 +1,74 @@
+.iconButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.iconButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Edit Button */
+.editButton {
+  color: #6b7280;
+}
+
+.editButton:hover:not(:disabled) {
+  color: #2563eb;
+  transform: scale(1.1);
+}
+
+/* Save Button */
+.saveButton {
+  color: #059669;
+  width: 2rem;
+  height: 2rem;
+}
+
+.saveButton:hover:not(:disabled) {
+  background-color: #d1fae5;
+  transform: scale(1.1);
+}
+
+/* Cancel Button */
+.cancelButton {
+  color: #dc2626;
+  width: 2rem;
+  height: 2rem;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background-color: #fee2e2;
+  transform: scale(1.1);
+}
+
+/* Delete Button */
+.deleteButton {
+  color: #dc2626;
+}
+
+.deleteButton:hover:not(:disabled) {
+  color: #991b1b;
+  background-color: #fee2e2;
+  transform: scale(1.1);
+}
+
+/* Add Button */
+.addButton {
+  color: #2563eb;
+}
+
+.addButton:hover:not(:disabled) {
+  color: #1d4ed8;
+  background-color: #dbeafe;
+  transform: scale(1.1);
+}

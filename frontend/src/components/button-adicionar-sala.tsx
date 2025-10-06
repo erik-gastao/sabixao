@@ -7,13 +7,17 @@ interface ButtonAdicionarSalaProps {
     descricaoSala?: string;
     isNew?: boolean;
     onClick?: () => void;
+    questaoId?: number | string;
+    salaId?: number | string;
 }
 
 export default function ButtonAdicionarSala({ 
     nomePergunta,
     descricaoSala = "Lorem ipsum dolor sit ama...",
     isNew = false,
-    onClick 
+    onClick,
+    questaoId,
+    salaId
 }: ButtonAdicionarSalaProps) {
     const router = useRouter();
 
@@ -22,6 +26,9 @@ export default function ButtonAdicionarSala({
             onClick();
         } else if (isNew) {
             router.push('/criar-sala');
+        } else if (questaoId && salaId) {
+            // Redireciona para a página de editar questão
+            router.push(`/editar-questao?salaId=${salaId}&questaoId=${questaoId}`);
         }
     };
 
@@ -30,9 +37,8 @@ export default function ButtonAdicionarSala({
             {/* Botão com nome e descrição */}
             {!isNew && nomePergunta && (
                 <div className={styles.perguntaRow}>
-                    <span className={styles.nLabel}>N°</span>
+                    <span className={styles.nLabel}>{nomePergunta}</span>
                     <button className={styles.buttonDescricao} onClick={handleClick}>
-                        <span className={styles.numero}>{nomePergunta}</span>
                         <span className={styles.descricao}>{descricaoSala}</span>
                     </button>
                 </div>

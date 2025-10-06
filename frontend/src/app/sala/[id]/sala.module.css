@@ -1,0 +1,177 @@
+.salaBackground {
+  background-image: url('/images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.logoContainer {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+}
+
+.voltarContainer {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+.formWrapper {
+  width: 100%;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 8rem;
+}
+
+.nomeSalaContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.label {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  white-space: nowrap;
+  align-self: flex-start;
+  padding-top: 0.5rem;
+}
+
+.infoContainer {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.infoCard {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.infoLabel {
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.infoValue {
+  color: #2563eb;
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: monospace;
+}
+
+.statusBadge {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.statusBadge.aguardando {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.statusBadge.jogando {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.statusBadge.finalizado {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.questoesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.questoesList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.questoesList::-webkit-scrollbar {
+  width: 8px;
+}
+
+.questoesList::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.questoesList::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.questoesList::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.iniciarButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.iniciarButton {
+  min-width: 15rem;
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .formWrapper {
+    margin-top: 10rem;
+  }
+
+  .nomeSalaContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .label {
+    align-self: center;
+  }
+
+  .infoContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .questoesList {
+    max-height: 50vh;
+  }
+}

@@ -4,12 +4,14 @@ import styles from './button-criar-sala.module.css';
 
 interface ButtonCriarSalaProps {
     nomeSala?: string;
+    salaId?: number | string;
     isNew?: boolean;
     onClick?: () => void;
 }
 
 export default function ButtonCriarSala({ 
-    nomeSala, 
+    nomeSala,
+    salaId,
     isNew = false,
     onClick 
 }: ButtonCriarSalaProps) {
@@ -21,10 +23,11 @@ export default function ButtonCriarSala({
         } else if (isNew) {
             // Se for o botão de criar nova sala, redireciona para /criar-sala
             router.push('/criar-sala');
+        } else if (salaId) {
+            // Se for uma sala existente, abre a página da sala
+            router.push(`/sala/${salaId}`);
         } else {
-            // Se for uma sala existente, pode abrir a sala
-            console.log('Abrindo sala:', nomeSala);
-            // router.push(`/sala/${pinSala}`);
+            console.log('Erro: salaId não foi fornecido');
         }
     };
 

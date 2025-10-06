@@ -19,6 +19,13 @@
   display: flex;
 }
 
+.voltarContainer {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
 .container {
   width: 100%;
   max-width: 60rem;

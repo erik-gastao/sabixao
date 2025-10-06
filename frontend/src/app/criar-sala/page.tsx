@@ -42,6 +42,10 @@ export default function CriarSala() {
         setPerguntas([...perguntas, novaPergunta]);
     };
 
+    const handleVoltar = () => {
+        router.push('/lista-salas');
+    };
+
     return (
         <div className={styles.criarSalaBackground}>
             {/* Logo */}
@@ -53,6 +57,13 @@ export default function CriarSala() {
                     height={200}
                     priority
                 />
+            </div>
+            
+            {/* Botão Voltar */}
+            <div className={styles.voltarContainer}>
+                <Button onClick={handleVoltar} className={styles.btnVoltar}>
+                    ← Voltar
+                </Button>
             </div>
             
             <div className={styles.formWrapper}>
@@ -80,9 +91,7 @@ export default function CriarSala() {
                             />
                         ))}
                         
-                        {/* Botões de adicionar */}
-                        <ButtonAdicionarSala isNew onClick={handleAdicionarPergunta} />
-                        <ButtonAdicionarSala isNew onClick={handleAdicionarPergunta} />
+                        {/* Botão de adicionar - apenas um */}
                         <ButtonAdicionarSala isNew onClick={handleAdicionarPergunta} />
                     </div>
                 </div>

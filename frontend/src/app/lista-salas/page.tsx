@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import ButtonCriarSala from '../../components/button-criar-sala';
+import VoltarButton from '../../components/voltar-button';
 import styles from './lista-salas.module.css';
 
 export default function ListaSalas() {
@@ -14,6 +15,10 @@ export default function ListaSalas() {
         { id: 2, nome: 'Sala XYZ' },
         { id: 3, nome: 'Quiz Matemática' },
     ]);
+
+    const handleVoltar = () => {
+        router.push('/');
+    };
 
     return (
         <div className={styles.listaSalasBackground}>
@@ -27,6 +32,11 @@ export default function ListaSalas() {
                     priority
                 />
             </div>
+
+            {/* Botão Voltar */}
+            <div className={styles.voltarContainer}>
+                <VoltarButton onClick={handleVoltar} />
+            </div>
             
             <div className={styles.container}>
                 <h1 className={styles.title}>Minhas Salas</h1>
@@ -39,6 +49,7 @@ export default function ListaSalas() {
                     {salas.map((sala) => (
                         <ButtonCriarSala 
                             key={sala.id}
+                            salaId={sala.id}
                             nomeSala={sala.nome}
                         />
                     ))}
