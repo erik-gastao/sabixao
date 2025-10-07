@@ -54,6 +54,12 @@ export default function Sala() {
         console.log('Nome da sala atualizado para:', novoNome);
     };
 
+    const handleSalvar = () => {
+        console.log('Salvando sala...', sala, questoes);
+        // Aqui você faria a chamada para a API para salvar a sala
+        router.push('/lista-salas');
+    };
+
     return (
         <div className={styles.salaBackground}>
             {/* Logo */}
@@ -119,8 +125,15 @@ export default function Sala() {
                     </div>
                 </div>
 
-                {/* Botão Iniciar Quiz */}
-                <div className={styles.iniciarButtonContainer}>
+                {/* Botões de Ação */}
+                <div className={styles.actionsButtonContainer}>
+                    <Button 
+                        type="button" 
+                        className={styles.salvarButton}
+                        onClick={handleSalvar}
+                    >
+                        SALVAR
+                    </Button>
                     <Button 
                         type="button" 
                         className={styles.iniciarButton}

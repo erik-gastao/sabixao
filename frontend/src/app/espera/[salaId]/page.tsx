@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Button from '../../../components/button';
 import Language from '../../../components/language';
+import Timer from '../../../components/timer';
 import styles from './espera.module.css';
 
 export default function Espera() {
@@ -20,6 +21,13 @@ export default function Espera() {
     // Verificar se o usuário é o criador (mockado - futuramente virá da API/Auth)
     const [isCriador, setIsCriador] = useState(true);
 
+    // Verificar se o usuário está logado (mockado - futuramente virá da API/Auth)
+    // Você pode usar localStorage, cookies, ou context para verificar isso
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    // Controle da contagem regressiva
+    const [showTimer, setShowTimer] = useState(false);
+
     // Lista de jogadores (mockado)
     const [jogadores, setJogadores] = useState([
         { id: 1, nome: 'Nickname', avatar: '👤' },
@@ -30,67 +38,99 @@ export default function Espera() {
     useEffect(() => {
         // Aqui você pode buscar os dados da sala da API
         // e atualizar em tempo real (WebSocket/Polling)
+        
+        // Verificar se o usuário está logado
+        // Exemplo: verificar localStorage ou cookie
+        const userLoggedIn = localStorage.getItem('userToken') !== null;
+        setIsLoggedIn(userLoggedIn);
     }, [salaId]);
 
     const handleSair = () => {
-        router.push('/');
+        // Se está logado, vai para lista de salas
+        // Se é guest, vai para a página inicial
+        if (isLoggedIn) {
+            router.push('/lista-salas');
+        } else {
+            router.push('/');
+        }
     };
 
     const handleIniciar = () => {
+        setShowTimer(true);
+    };
+
+    const handleTimerComplete = () => {
         router.push(`/jogar/${salaId}`);
     };
 
     return (
         <div className={styles.esperaBackground}>
-            {/* Seletor de Idioma */}
-            <div className={styles.languageContainer}>
-                <Language />
-            </div>
+            {!showTimer && (
+                <>
+                    {/* Seletor de Idioma */}
+                    <div className={styles.languageContainer}>
+                        <Language />
+                    </div>
 
-            {/* Logo */}
-            <div className={styles.logoContainer}>
-                <Image
-                    src="/images/logo.png"
-                    alt="Sabixão"
-                    width={200}
-                    height={200}
-                    priority
-                />
-            </div>
+                    {/* Logo */}
+                    <div className={styles.logoContainer}>
+                        <Image
+                            src="/images/logo.png"
+                            alt="Sabixão"
+                            width={200}
+                            height={200}
+                            priority
+                        />
+                    </div>
+                </>
+            )}
 
             {/* Container Principal */}
             <div className={styles.mainContainer}>
-                {/* Código da Sala */}
-                <div className={styles.codigoSala}>
-                    Código da sala: <span className={styles.codigo}>{sala.codigo}</span>
-                </div>
-
-                {/* Status */}
-                <div className={styles.status}>
-                    {sala.status}
-                </div>
-
-                {/* Lista de Jogadores */}
-                <div className={styles.jogadoresList}>
-                    {jogadores.map((jogador) => (
-                        <div key={jogador.id} className={styles.jogadorCard}>
-                            <span className={styles.avatar}>{jogador.avatar}</span>
-                            <span className={styles.jogadorNome}>{jogador.nome}</span>
+                {!showTimer ? (
+                    <>
+                        {/* Código da Sala */}
+                        <div className={styles.codigoSala}>
+                            Código da sala: <span className={styles.codigo}>{sala.codigo}</span>
                         </div>
-                    ))}
-                </div>
 
-                {/* Botões */}
-                <div className={styles.buttonContainer}>
-                    {isCriador && (
-                        <Button onClick={handleIniciar} className={styles.btnComecar}>
-                            COMEÇAR JOGO
-                        </Button>
-                    )}
-                    <Button onClick={handleSair} className={styles.btnSair}>
-                        SAIR
-                    </Button>
-                </div>
+                        {/* Status */}
+                        <div className={styles.status}>
+                            {sala.status}
+                        </div>
+
+                        {/* Lista de Jogadores */}
+                        <div className={styles.jogadoresList}>
+                            {jogadores.map((jogador) => (
+                                <div key={jogador.id} className={styles.jogadorCard}>
+                                    <span className={styles.avatar}>{jogador.avatar}</span>
+                                    <span className={styles.jogadorNome}>{jogador.nome}</span>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Botões */}
+                        <div className={styles.buttonContainer}>
+                            {isCriador && (
+                                <Button onClick={handleIniciar} className={styles.btnComecar}>
+                                    COMEÇAR JOGO
+                                </Button>
+                            )}
+                            <Button onClick={handleSair} className={styles.btnSair}>
+                                SAIR
+                            </Button>
+                        </div>
+                    </>
+                ) : (
+                    /* Timer de Contagem Regressiva */
+                    <Timer 
+                        size="xlarge"
+                        onComplete={handleTimerComplete}
+                        autoStart={true}
+                        showText={true}
+                        text="A partida já vai começar..."
+                    />
+                )}
             </div>
         </div>
     );

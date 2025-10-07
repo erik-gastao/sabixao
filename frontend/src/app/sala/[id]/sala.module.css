@@ -138,16 +138,31 @@
   background: rgba(255, 255, 255, 0.5);
 }
 
+
+.actionsButtonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.salvarButton {
+  min-width: 12rem;
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+}
+
+.iniciarButton {
+  min-width: 12rem;
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+}
+
 .iniciarButtonContainer {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
-}
-
-.iniciarButton {
-  min-width: 15rem;
-  font-size: 1.25rem;
-  padding: 1rem 2rem;
 }
 
 @media (max-width: 768px) {
@@ -172,4 +187,15 @@
   .questoesList {
     max-height: 50vh;
   }
+
+  .actionsButtonContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .salvarButton,
+  .iniciarButton {
+    width: 100%;
+  }
 }
+

@@ -15,6 +15,24 @@ export default function CriarSala() {
     ]);
     const router = useRouter();
 
+    const handleSalvar = async () => {
+        if (!nomeSala) {
+            setError('Por favor, digite o nome da sala');
+            return;
+        }
+        
+        try {
+            console.log('Salvando sala:', { nomeSala, perguntas });
+            setError('');
+            // Aqui você faria a chamada para a API para salvar a sala
+            // Após salvar, redireciona para a lista de salas
+            router.push('/lista-salas');
+        } catch (err) {
+            setError('Erro ao salvar sala. Tente novamente.');
+            console.error('Erro ao salvar sala:', err);
+        }
+    };
+
     const handleCriarSala = async () => {
         if (!nomeSala) {
             setError('Por favor, digite o nome da sala');
@@ -22,11 +40,12 @@ export default function CriarSala() {
         }
         
         try {
-            console.log('Criando sala:', { nomeSala, perguntas });
+            console.log('Criando e iniciando sala:', { nomeSala, perguntas });
             setError('');
             // Aqui você faria a chamada para a API para criar a sala
-            // Após criar, redireciona para a lista de salas
-            router.push('/lista-salas');
+            // Após criar, redireciona para a página da sala (ou espera)
+            const salaId = '123'; // ID mockado, virá da API
+            router.push(`/sala/${salaId}`);
         } catch (err) {
             setError('Erro ao criar sala. Tente novamente.');
             console.error('Erro ao criar sala:', err);
@@ -40,6 +59,11 @@ export default function CriarSala() {
             texto: 'Lorem ipsum dolor sit ama...'
         };
         setPerguntas([...perguntas, novaPergunta]);
+    };
+
+    const handleDeletarPergunta = (perguntaId: number) => {
+        setPerguntas(perguntas.filter(p => p.id !== perguntaId));
+        console.log('Pergunta deletada:', perguntaId);
     };
 
     const handleVoltar = () => {
@@ -83,11 +107,12 @@ export default function CriarSala() {
                 <div className={styles.perguntasContainer}>
                     <div className={styles.perguntasList}>
                         {/* Lista de perguntas */}
-                        {perguntas.map((pergunta) => (
+                        {perguntas.map((pergunta, index) => (
                             <ButtonAdicionarSala 
                                 key={pergunta.id}
-                                nomePergunta={pergunta.nome}
+                                nomePergunta={(index + 1).toString()}
                                 descricaoSala={pergunta.texto}
+                                onDelete={() => handleDeletarPergunta(pergunta.id)}
                             />
                         ))}
                         
@@ -96,8 +121,15 @@ export default function CriarSala() {
                     </div>
                 </div>
 
-                {/* Botão Criar */}
-                <div className={styles.criarButtonContainer}>
+                {/* Botões de Ação */}
+                <div className={styles.actionsButtonContainer}>
+                    <Button 
+                        type="button" 
+                        className={styles.salvarButton}
+                        onClick={handleSalvar}
+                    >
+                        SALVAR
+                    </Button>
                     <Button 
                         type="button" 
                         className={styles.criarButton}
