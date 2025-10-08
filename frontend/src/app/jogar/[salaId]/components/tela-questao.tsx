@@ -5,6 +5,7 @@ import styles from './tela-questao.module.css';
 import Timer from '@/components/timer';
 import IconeTipoQuestao from '@/components/icone-tipo-questao';
 import CardResposta from '@/components/card-resposta';
+import Button from '@/components/button';
 
 interface Opcao {
     id: number;
@@ -126,12 +127,14 @@ export default function TelaQuestao({
 
                 {/* Botão Enviar */}
                 {respostasSelecionadas.length > 0 && (
-                    <button 
-                        onClick={onEnviarResposta}
-                        className={styles.btnEnviar}
-                    >
-                        ENVIAR
-                    </button>
+                    <div className={styles.btnEnviarContainer}>
+                        <Button 
+                            onClick={onEnviarResposta}
+                            className={styles.btnEnviar}
+                        >
+                            ENVIAR
+                        </Button>
+                    </div>
                 )}
             </div>
         </div>

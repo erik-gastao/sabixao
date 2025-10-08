@@ -43,9 +43,9 @@ export default function CriarSala() {
             console.log('Criando e iniciando sala:', { nomeSala, perguntas });
             setError('');
             // Aqui você faria a chamada para a API para criar a sala
-            // Após criar, redireciona para a página da sala (ou espera)
+            // Após criar, redireciona para a página de espera
             const salaId = '123'; // ID mockado, virá da API
-            router.push(`/sala/${salaId}`);
+            router.push(`/espera/${salaId}`);
         } catch (err) {
             setError('Erro ao criar sala. Tente novamente.');
             console.error('Erro ao criar sala:', err);
@@ -64,6 +64,13 @@ export default function CriarSala() {
     const handleDeletarPergunta = (perguntaId: number) => {
         setPerguntas(perguntas.filter(p => p.id !== perguntaId));
         console.log('Pergunta deletada:', perguntaId);
+    };
+
+    const handleEditarPergunta = (perguntaId: number) => {
+        // Redireciona para a página de editar questão
+        // Como ainda não temos salaId (sala ainda não foi criada), 
+        // podemos usar 'nova' como placeholder
+        router.push(`/editar-questao?perguntaId=${perguntaId}`);
     };
 
     const handleVoltar = () => {
@@ -112,7 +119,10 @@ export default function CriarSala() {
                                 key={pergunta.id}
                                 nomePergunta={(index + 1).toString()}
                                 descricaoSala={pergunta.texto}
+                                questaoId={pergunta.id}
+                                salaId="nova"
                                 onDelete={() => handleDeletarPergunta(pergunta.id)}
+                                onClick={() => handleEditarPergunta(pergunta.id)}
                             />
                         ))}
                         

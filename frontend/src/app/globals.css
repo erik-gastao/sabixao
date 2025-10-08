@@ -80,3 +80,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* Ocultar indicador do Next.js em desenvolvimento */
+#__next-route-announcer__,
+[data-nextjs-scroll-focus-boundary] {
+  display: none !important;
+}
