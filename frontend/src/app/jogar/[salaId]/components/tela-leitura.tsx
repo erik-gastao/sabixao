@@ -104,7 +104,7 @@ export default function TelaLeitura({
                         src="/images/logo.png"
                         alt="Sabixão"
                         width={120}
-                        height={100}
+                        height={120}
                     />
                 </div>
 

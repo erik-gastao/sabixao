@@ -82,7 +82,7 @@ export default function TelaQuestao({
                         src="/images/logo.png"
                         alt="Sabixão"
                         width={120}
-                        height={100}
+                        height={120}
                     />
                 </div>
 

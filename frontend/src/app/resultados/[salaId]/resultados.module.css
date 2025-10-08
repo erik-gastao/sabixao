@@ -264,9 +264,9 @@
     padding: 1rem;
   }
 
-  .logo {
-    width: 120px;
-    height: 100px;
+  .logo img {
+    width: 120px !important;
+    height: 120px !important;
   }
 
   .titulo {

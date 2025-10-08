@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './answer-options-editor.module.css';
 
 interface Option {
@@ -22,6 +22,13 @@ export default function AnswerOptionsEditor({
     const [localOptions, setLocalOptions] = useState<Option[]>(
         options.length > 0 ? options : getDefaultOptions(type)
     );
+
+    // Atualiza as opções quando o tipo de questão muda
+    useEffect(() => {
+        const defaultOptions = getDefaultOptions(type);
+        setLocalOptions(defaultOptions);
+        onOptionsChange(defaultOptions);
+    }, [type]);
 
     function getDefaultOptions(questionType: 'escolha-unica' | 'multipla-escolha' | 'verdadeiro-falso'): Option[] {
         if (questionType === 'verdadeiro-falso') {

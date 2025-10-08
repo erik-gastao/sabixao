@@ -44,7 +44,7 @@ export default function Resultados() {
                         src="/images/logo.png"
                         alt="Sabixão"
                         width={150}
-                        height={120}
+                        height={150}
                     />
                 </div>
 

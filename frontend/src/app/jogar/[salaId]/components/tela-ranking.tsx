@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import styles from './tela-ranking.module.css';
 import CardEquipeRanking from './card-equipe-ranking';
+import Button from '@/components/button';
 
 interface Equipe {
     id: number;
@@ -48,7 +49,7 @@ export default function TelaRanking({ equipes, questaoAtual, totalQuestoes, onPr
                         src="/images/logo.png"
                         alt="Sabixão"
                         width={120}
-                        height={100}
+                        height={120}
                     />
                 </div>
 
@@ -74,10 +75,12 @@ export default function TelaRanking({ equipes, questaoAtual, totalQuestoes, onPr
                     <span>Pergunta {questaoAtual} de {totalQuestoes}</span>
                 </div>
 
-                {/* Botão Próxima */}
-                <button onClick={onProxima} className={styles.btnProxima}>
-                    PRÓXIMA
-                </button>
+                {/* Botão Próxima - TESTE */}
+                <div className={styles.buttonContainer}>
+                    <Button onClick={onProxima} className={styles.btnProxima}>
+                        PRÓXIMA (TESTE)
+                    </Button>
+                </div>
             </div>
         </div>
     );
