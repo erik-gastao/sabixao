@@ -1,0 +1,90 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.label {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  font-family: 'Baloo 2', cursive;
+}
+
+.typesContainer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.typeCard {
+  background: linear-gradient(135px, #077DD7 0%, #0561B0 100%);
+  border: 3px solid #004A8F;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.typeCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  filter: brightness(110%);
+}
+
+.typeCard:active {
+  transform: translateY(-2px);
+}
+
+.typeCard.selected {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-color: #047857;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+}
+
+.typeCard.selected:hover {
+  filter: brightness(110%);
+}
+
+.iconWrapper {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.typeLabel {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-family: 'Baloo 2', cursive;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .typesContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .typeCard {
+    width: 100%;
+  }
+
+  .label {
+    font-size: 1rem;
+    text-align: center;
+  }
+}

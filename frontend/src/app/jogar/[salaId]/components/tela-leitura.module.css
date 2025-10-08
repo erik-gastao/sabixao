@@ -1,0 +1,200 @@
+.container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: #6B21A8; /* Debug: roxo temporário */
+}
+
+.background {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.logo {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.timer {
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btnTeste {
+  background: linear-gradient(135deg, #28a745 0%, #20873a 100%);
+  color: white;
+  font-family: 'Baloo 2', system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border: 3px solid #1e7e34;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+}
+
+.btnTeste:hover {
+  background: linear-gradient(135deg, #34ce57 0%, #28a745 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.btnTeste:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.titulo {
+  font-family: 'Baloo 2', cursive;
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.pergunta {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 2rem 3rem;
+  z-index: 2;
+  animation: fadeIn 0.7s ease-in;
+}
+
+.respostasPrevia {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 2;
+  animation: fadeIn 0.9s ease-in;
+}
+
+.cardPrevia {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  min-height: 5rem;
+  pointer-events: none;
+}
+
+.simbolo {
+  flex-shrink: 0;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textoPrevia {
+  flex: 1;
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-align: left;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 1rem;
+  }
+
+  .logo {
+    top: 1rem;
+  }
+
+  .timer {
+    top: 1rem;
+    right: 2rem;
+  }
+
+  .titulo {
+    font-size: 2rem;
+    margin-top: 8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pergunta {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .respostasPrevia {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cardPrevia {
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+    min-height: 4rem;
+  }
+
+  .simbolo {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .simbolo svg {
+    width: 45px;
+    height: 45px;
+  }
+
+  .textoPrevia {
+    font-size: 1.2rem;
+  }
+}

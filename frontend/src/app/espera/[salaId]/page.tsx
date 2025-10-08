@@ -60,7 +60,9 @@ export default function Espera() {
     };
 
     const handleTimerComplete = () => {
-        router.push(`/jogar/${salaId}`);
+        setTimeout(() => {
+            router.push(`/jogar/${salaId}`);
+        }, 0);
     };
 
     return (
@@ -123,13 +125,21 @@ export default function Espera() {
                     </>
                 ) : (
                     /* Timer de Contagem Regressiva */
-                    <Timer 
-                        size="xlarge"
-                        onComplete={handleTimerComplete}
-                        autoStart={true}
-                        showText={true}
-                        text="A partida já vai começar..."
-                    />
+                    <div className={styles.timerContainer}>
+                        <Timer 
+                            size="xlarge"
+                            onComplete={handleTimerComplete}
+                            autoStart={true}
+                            showText={true}
+                            text="A partida já vai começar..."
+                        />
+                        <button 
+                            onClick={handleTimerComplete}
+                            className={styles.btnTeste}
+                        >
+                            AVANÇAR (TESTE)
+                        </button>
+                    </div>
                 )}
             </div>
         </div>

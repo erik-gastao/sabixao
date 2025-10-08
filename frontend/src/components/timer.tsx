@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from 'react';
 import styles from './timer.module.css';
 
@@ -18,7 +19,7 @@ export default function Timer({
     text = 'A partida já vai começar...'
 }: TimerProps) {
     const [timeLeft, setTimeLeft] = useState(15); // Fixo em 15 segundos
-    const [isRunning, setIsRunning] = useState(autoStart);
+    const [isRunning, setIsRunning] = useState(false); // DESABILITADO para testes
 
     useEffect(() => {
         if (!isRunning || timeLeft <= 0) return;
