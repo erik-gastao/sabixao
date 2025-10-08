@@ -22,8 +22,8 @@ graph TB
     API -.->|HTTP/WS| BACKEND
     
     %% Estilos
-    classDef frontend fill:#61dafb,stroke:#333,stroke-width:2px
-    classDef backend fill:#68d391,stroke:#333,stroke-width:2px
+    classDef frontend fill:#61dafb,stroke:#333,stroke-width:2px,color:#000
+    classDef backend fill:#68d391,stroke:#333,stroke-width:2px,color:#000
     
     class USER,UI,PAGES,STATE,API frontend
     class BACKEND backend
@@ -69,10 +69,10 @@ flowchart TD
     RESULTADOS --> HOME
     
     %% Estilos
-    classDef auth fill:#fef3c7,stroke:#f59e0b,stroke-width:2px
-    classDef admin fill:#dbeafe,stroke:#3b82f6,stroke-width:2px
-    classDef game fill:#dcfce7,stroke:#22c55e,stroke-width:2px
-    classDef home fill:#f3e8ff,stroke:#a855f7,stroke-width:2px
+    classDef auth fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000
+    classDef admin fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#000
+    classDef game fill:#dcfce7,stroke:#22c55e,stroke-width:2px,color:#000
+    classDef home fill:#f3e8ff,stroke:#a855f7,stroke-width:2px,color:#000
     
     class LOGIN,CRIAR_CONTA auth
     class LISTA_SALAS,CRIAR_SALA,SALA_ADMIN,EDITAR_QUESTAO admin
