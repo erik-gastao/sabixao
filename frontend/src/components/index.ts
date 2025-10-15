@@ -4,7 +4,7 @@ export { default as EditarButton } from './editar-button';
 export { default as SalvarButton } from './salvar-button';
 export { default as CancelarButton } from './cancelar-button';
 export { default as DeletarButton } from './deletar-button';
-export { default as AdicionarButton } from './adicionar-button';
+export { default as AdicionarButton } from './buttons/add';
 export { default as VoltarButton } from './voltar-button';
 export { default as IniciarButton } from './iniciar-button';
 

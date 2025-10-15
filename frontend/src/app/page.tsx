@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Button from '../components/button';
 import Input from '../components/input';
 import Language from '../components/language';
+import FormContainerHome from '../components/containers/formContainer-home';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './page.module.css';
@@ -50,13 +51,13 @@ export default function Home() {
                 <Image
                     src="/images/logo.png"
                     alt="Sabixão"
-                    width={300}
-                    height={300}
+                    width={180}
+                    height={180}
                     priority
                 />
             </div>
             
-            <div className={styles.formContainer}>
+            <FormContainerHome>
                 <h2 className={styles.title}>Entrar ou Criar uma Sala</h2>
                 
                 {error && (
@@ -100,7 +101,7 @@ export default function Home() {
                         </Button>
                     </div>
                 </form>
-            </div>
+            </FormContainerHome>
         </div>
     );
 }

@@ -1,5 +1,5 @@
 "use client";
-import IconButton from './icon-button';
+import IconButton from '../icon-button';
 
 interface AdicionarButtonProps {
     onClick: () => void;
