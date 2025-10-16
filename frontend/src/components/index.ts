@@ -9,7 +9,7 @@ export { default as VoltarButton } from './voltar-button';
 export { default as IniciarButton } from './iniciar-button';
 
 // Componentes Base
-export { default as Button } from './button';
+export { default as Button } from './buttons/button';
 export { default as IconButton } from './icon-button';
 export { default as Input } from './inputs/input';
 export { default as EditableInput } from './editable-input';

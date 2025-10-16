@@ -1,12 +1,14 @@
 "use client";
 import { useState } from 'react';
-import Button from '../components/button';
+import EntrarHomeButton from '../components/buttons/entrar-home';
+import Button from '../components/buttons/button';
 import Input from '../components/inputs/input';
 import Language from '../components/language';
 import FormContainerHome from '../components/containers/formContainer-home';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './page.module.css';
+import CriarSalaHomeButton from '../components/buttons/criarSala-home';
 
 export default function Home() {
     const [nomeJogador, setNomeJogador] = useState('');
@@ -86,19 +88,19 @@ export default function Home() {
                     
                     {/* Container para os botões */}
                     <div className={styles.buttonContainer}>
-                        <Button type="submit" className={styles.gameButton}>
-                            ENTRAR
-                        </Button>
+                        <EntrarHomeButton 
+                            type="submit"
+                            className={styles.gameButton}
+                        />
                         
                         <span className={styles.orText}>OU</span>
                         
-                        <Button 
-                            type="button" 
+                        <CriarSalaHomeButton 
                             className={styles.gameButton}
                             onClick={handleCriarSala}
                         >
                             CRIAR SALA
-                        </Button>
+                        </CriarSalaHomeButton>
                     </div>
                 </form>
             </FormContainerHome>

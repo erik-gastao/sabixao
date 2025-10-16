@@ -1,5 +1,5 @@
 "use client";
-import Button from './button';
+import Button from './buttons/button';
 
 interface VoltarButtonProps {
     onClick: () => void;

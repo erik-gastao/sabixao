@@ -5,7 +5,7 @@ import styles from './tela-questao.module.css';
 import Timer from '@/components/timer';
 import IconeTipoQuestao from '@/components/icone-tipo-questao';
 import CardResposta from '@/components/card-resposta';
-import Button from '@/components/button';
+import Button from '@/components/buttons/button';
 
 interface Opcao {
     id: number;
