@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import Input from './input';
+import Input from './inputs/input';
 import EditarButton from './editar-button';
 import SalvarButton from './salvar-button';
 import CancelarButton from './cancelar-button';

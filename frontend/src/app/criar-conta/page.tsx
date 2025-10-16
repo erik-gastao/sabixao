@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Button from '../../components/button';
-import Input from '../../components/input';
+import Input from '../../components/inputs/input';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './criar-conta.module.css';

@@ -11,7 +11,7 @@ export { default as IniciarButton } from './iniciar-button';
 // Componentes Base
 export { default as Button } from './button';
 export { default as IconButton } from './icon-button';
-export { default as Input } from './input';
+export { default as Input } from './inputs/input';
 export { default as EditableInput } from './editable-input';
 export { default as Language } from './language';
 

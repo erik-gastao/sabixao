@@ -3,7 +3,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import Image from 'next/image';
 import Button from '../../components/button';
-import Input from '../../components/input';
+import Input from '../../components/inputs/input';
 import QuestionTypeSelector from '../../components/question-type-selector';
 import AnswerOptionsEditor from '../../components/answer-options-editor';
 import styles from './editar-questao.module.css';
