@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Input from './inputs/input';
-import EditarButton from './editar-button';
+import EditarButton from './icons/editar';
 import SalvarButton from './salvar-button';
 import CancelarButton from './cancelar-button';
 import styles from './editable-input.module.css';

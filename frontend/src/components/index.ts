@@ -1,6 +1,6 @@
 // Componentes de Botões por Ação
 export { default as CriarButton } from './criar-button';
-export { default as EditarButton } from './editar-button';
+export { default as EditarButton } from './icons/editar';
 export { default as SalvarButton } from './salvar-button';
 export { default as CancelarButton } from './cancelar-button';
 export { default as DeletarButton } from './deletar-button';
