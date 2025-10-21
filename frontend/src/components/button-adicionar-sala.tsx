@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from 'next/navigation';
-import DeleteIconButton from './delete-icon-button';
+import Lixeira from './icons/lixeira';
 import styles from './button-adicionar-sala.module.css';
 
 interface ButtonAdicionarSalaProps {
@@ -53,7 +53,11 @@ export default function ButtonAdicionarSala({
                     </button>
                     {onDelete && (
                         <div className={styles.deleteButtonContainer}>
-                            <DeleteIconButton onClick={handleDelete} />
+                            <Lixeira 
+                                onClick={handleDelete} 
+                                title="Deletar"
+                                size="md"
+                            />
                         </div>
                     )}
                 </div>

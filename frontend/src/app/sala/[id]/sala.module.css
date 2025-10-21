@@ -38,7 +38,7 @@
 
 .nomeSalaContainer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   justify-content: center;
 }
@@ -49,6 +49,8 @@
   font-weight: bold;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
   white-space: nowrap;
+  padding-top: 0.75rem;
+  line-height: 1.5;
 }
 
 .infoContainer {
@@ -197,5 +199,30 @@
   .iniciarButton {
     width: 100%;
   }
+
+  .apagarSalaContainer {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+/* Botão Apagar Sala */
+.apagarSalaContainer {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 20;
+}
+
+.apagarSalaLabel {
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-align: center;
 }
 

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Button from '../../../components/buttons/button';
 import EditableInput from '../../../components/editable-input';
 import ButtonAdicionarSala from '../../../components/button-adicionar-sala';
+import Lixeira from '../../../components/icons/lixeira';
 import styles from './sala.module.css';
 
 export default function Sala() {
@@ -58,6 +59,18 @@ export default function Sala() {
         console.log('Salvando sala...', sala, questoes);
         // Aqui você faria a chamada para a API para salvar a sala
         router.push('/lista-salas');
+    };
+
+    const handleApagarSala = () => {
+        const confirmDelete = window.confirm(
+            `Tem certeza que deseja apagar a sala "${sala.nome}"?`
+        );
+        
+        if (confirmDelete) {
+            console.log('Sala apagada:', salaId);
+            // Aqui você faria a chamada para a API para apagar a sala
+            router.push('/lista-salas');
+        }
     };
 
     return (
@@ -142,6 +155,16 @@ export default function Sala() {
                         INICIAR QUIZ
                     </Button>
                 </div>
+            </div>
+
+            {/* Botão Apagar Sala */}
+            <div className={styles.apagarSalaContainer}>
+                <Lixeira 
+                    onClick={handleApagarSala}
+                    title="Apagar sala"
+                    size="lg"
+                />
+                <span className={styles.apagarSalaLabel}>Apagar sala</span>
             </div>
         </div>
     );
