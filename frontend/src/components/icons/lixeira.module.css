@@ -1,0 +1,31 @@
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 6px;
+  color: var(--red-normal, #ef4444);
+  background: transparent;
+  transition: background-color .15s ease, transform .08s ease, opacity .15s ease;
+  cursor: pointer;
+}
+
+.icon:hover {
+  background: rgba(239, 68, 68, 0.08);
+  transform: translateY(-1px);
+}
+
+.icon:active {
+  transform: translateY(0);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.sm { font-size: 14px; padding: 4px; }
+.md { font-size: 18px; padding: 6px; }
+.lg { font-size: 22px; padding: 8px; }

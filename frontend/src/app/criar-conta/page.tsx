@@ -55,8 +55,8 @@ export default function CriarConta() {
                 <Image
                     src="/images/logo.png"
                     alt="Sabixão"
-                    width={300}
-                    height={300}
+                    width={150}
+                    height={150}
                     priority
                 />
             </div>
