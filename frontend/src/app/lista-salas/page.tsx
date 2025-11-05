@@ -2,8 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import ButtonCriarSala from '../../components/button-criar-sala';
-import VoltarButton from '../../components/voltar-button';
+import { ButtonCriarSala, VoltarButton } from '@/components';
 import styles from './lista-salas.module.css';
 
 export default function ListaSalas() {

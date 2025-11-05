@@ -2,9 +2,7 @@
 import { useParams, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Image from 'next/image';
-import Button from '../../../components/button';
-import EditableInput from '../../../components/editable-input';
-import ButtonAdicionarSala from '../../../components/button-adicionar-sala';
+import { Button, EditableInput, ButtonAdicionarSala } from '@/components';
 import styles from './sala.module.css';
 
 export default function Sala() {

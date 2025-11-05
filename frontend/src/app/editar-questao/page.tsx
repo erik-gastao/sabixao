@@ -2,10 +2,7 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import Image from 'next/image';
-import Button from '../../components/button';
-import Input from '../../components/input';
-import QuestionTypeSelector from '../../components/question-type-selector';
-import AnswerOptionsEditor from '../../components/answer-options-editor';
+import { Button, Input, QuestionTypeSelector, AnswerOptionsEditor } from '@/components';
 import styles from './editar-questao.module.css';
 
 type QuestionType = 'escolha-unica' | 'multipla-escolha' | 'verdadeiro-falso';

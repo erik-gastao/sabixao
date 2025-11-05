@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import styles from './tela-ranking.module.css';
 import CardEquipeRanking from './card-equipe-ranking';
-import Button from '@/components/button';
+import { Button } from '@/components';
 
 interface Equipe {
     id: number;

@@ -3,7 +3,7 @@ import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './resultados.module.css';
 import CardEquipeRanking from '../../jogar/[salaId]/components/card-equipe-ranking';
-import Button from '../../../components/button';
+import { Button } from '@/components';
 
 export default function Resultados() {
     const params = useParams();

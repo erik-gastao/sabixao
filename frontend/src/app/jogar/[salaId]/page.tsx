@@ -1,7 +1,7 @@
 "use client";
 import { useParams, useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import QuestionTypeCard from '../../../components/question-type-card';
+import { QuestionTypeCard } from '@/components';
 import TelaLeitura from './components/tela-leitura';
 import TelaQuestao from './components/tela-questao';
 import TelaFeedback from './components/tela-feedback';

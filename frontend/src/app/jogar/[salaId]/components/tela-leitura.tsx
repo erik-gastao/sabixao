@@ -1,8 +1,7 @@
 "use client";
 import Image from 'next/image';
 import styles from './tela-leitura.module.css';
-import Timer from '@/components/timer';
-import IconeTipoQuestao from '@/components/icone-tipo-questao';
+import { Timer, IconeTipoQuestao } from '@/components';
 
 interface Opcao {
     id: number;

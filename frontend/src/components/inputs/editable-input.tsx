@@ -1,9 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Input from './input';
-import EditarButton from './editar-button';
-import SalvarButton from './salvar-button';
-import CancelarButton from './cancelar-button';
+import { EditarButton, SalvarButton, CancelarButton } from '../buttons';
 import styles from './editable-input.module.css';
 
 interface EditableInputProps {

@@ -1,8 +1,6 @@
 "use client";
 import { useState } from 'react';
-import Button from '../components/button';
-import Input from '../components/input';
-import Language from '../components/language';
+import { Button, Input, Language } from '@/components';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './page.module.css';

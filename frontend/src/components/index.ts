@@ -1,21 +1,24 @@
-// Componentes de Botões por Ação
-export { default as CriarButton } from './criar-button';
-export { default as EditarButton } from './editar-button';
-export { default as SalvarButton } from './salvar-button';
-export { default as CancelarButton } from './cancelar-button';
-export { default as DeletarButton } from './deletar-button';
-export { default as AdicionarButton } from './adicionar-button';
-export { default as VoltarButton } from './voltar-button';
-export { default as IniciarButton } from './iniciar-button';
+// ============================================
+// 📦 BARREL EXPORTS - Estrutura Organizada
+// ============================================
+// Todos os componentes agora estão organizados em pastas por categoria
+// Importação facilitada: import { Button, Input, Timer } from '@/components'
 
-// Componentes Base
-export { default as Button } from './button';
-export { default as IconButton } from './icon-button';
-export { default as Input } from './input';
-export { default as EditableInput } from './editable-input';
-export { default as Language } from './language';
+// 🔘 Botões
+export * from './buttons';
 
-// Componentes de Cards (mantidos para compatibilidade)
-export { default as ButtonCriarSala } from './button-criar-sala';
-export { default as ButtonAdicionarSala } from './button-adicionar-sala';
+// 📝 Inputs
+export * from './inputs';
+
+// 🎴 Cards
+export * from './cards';
+
+// 🎮 Quiz
+export * from './quiz';
+
+// 🎨 Ícones
+export * from './icons';
+
+// 🎨 UI
+export * from './ui';
 

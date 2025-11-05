@@ -1,7 +1,6 @@
 "use client";
 import { useState } from 'react';
-import Button from '../../components/button';
-import Input from '../../components/input';
+import { Button, Input } from '@/components';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './login.module.css';

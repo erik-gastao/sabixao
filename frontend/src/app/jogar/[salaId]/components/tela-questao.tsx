@@ -2,10 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import styles from './tela-questao.module.css';
-import Timer from '@/components/timer';
-import IconeTipoQuestao from '@/components/icone-tipo-questao';
-import CardResposta from '@/components/card-resposta';
-import Button from '@/components/button';
+import { Timer, IconeTipoQuestao, CardResposta, Button } from '@/components';
 
 interface Opcao {
     id: number;

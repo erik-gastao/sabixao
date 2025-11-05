@@ -2,9 +2,7 @@
 import { useParams, useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Button from '../../../components/button';
-import Language from '../../../components/language';
-import Timer from '../../../components/timer';
+import { Button, Language, Timer } from '@/components';
 import styles from './espera.module.css';
 
 export default function Espera() {
