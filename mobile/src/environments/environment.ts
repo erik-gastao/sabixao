@@ -4,9 +4,10 @@
 
 export const environment = {
   production: false,
+  // Para testar no NAVEGADOR, use: http://localhost:3001/api
   // Para testar no Android Emulator, use: http://10.0.2.2:3001/api
   // Para testar em dispositivo físico, use o IP da sua máquina: http://192.168.x.x:3001/api
-  apiUrl: 'http://10.0.2.2:3001/api'
+  apiUrl: 'http://192.168.3.155:3001/api'  // ← IP da máquina para dispositivo físico
 };
 
 /*

@@ -1,3 +1,4 @@
+
 # 📊 Visualização da Estrutura Organizada
 
 ## 🎯 Antes da Organização

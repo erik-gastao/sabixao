@@ -4,18 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import {
   IonContent,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
   IonCard,
   IonCardHeader,
-  IonCardTitle,
   IonCardContent,
   IonItem,
   IonLabel,
   IonInput,
   IonButton,
-  IonText,
   IonSpinner,
   ToastController
 } from '@ionic/angular/standalone';
@@ -29,18 +24,13 @@ import { LoginRequest } from '../../models/models';
   standalone: true,
   imports: [
     IonContent,
-    IonHeader,
-    IonTitle,
-    IonToolbar,
     IonCard,
     IonCardHeader,
-    IonCardTitle,
     IonCardContent,
     IonItem,
     IonLabel,
     IonInput,
     IonButton,
-    IonText,
     IonSpinner,
     CommonModule,
     FormsModule

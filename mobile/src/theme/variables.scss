@@ -1,2 +1,135 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+/** Sabixão Theme - Match Web App **/
+:root {
+  /* Sabixão Custom Colors */
+  
+  /* Orange Colors (Primary Brand) */
+  --orange-light: #fff7ed;
+  --orange-light-hover: #ffedd5;
+  --orange-light-active: #fed7aa;
+  --orange-normal: #f97316;
+  --orange-normal-hover: #ea580c;
+  --orange-normal-active: #dc2626;
+  --orange-dark: #c2410c;
+  --orange-dark-hover: #9a3412;
+  --orange-dark-active: #7c2d12;
+  --orange-darker: #6c2e12;
+
+  /* Red Colors */
+  --red-light: #fef2f2;
+  --red-light-hover: #fecaca;
+  --red-light-active: #fca5a5;
+  --red-normal: #ef4444;
+  --red-normal-hover: #dc2626;
+  --red-normal-active: #b91c1c;
+  --red-dark: #991b1b;
+  --red-dark-hover: #7f1d1d;
+  --red-dark-active: #6f1d1d;
+  --red-darker: #5f1d1d;
+
+  /* Green Colors (Success) */
+  --green-light: #f0fdf4;
+  --green-light-hover: #dcfce7;
+  --green-light-active: #bbf7d0;
+  --green-normal: #22c55e;
+  --green-normal-hover: #16a34a;
+  --green-normal-active: #15803d;
+  --green-dark: #166534;
+  --green-dark-hover: #14532d;
+  --green-dark-active: #0f4722;
+  --green-darker: #0d3f1f;
+
+  /* Blue Colors */
+  --blue-light: #eff6ff;
+  --blue-light-hover: #dbeafe;
+  --blue-light-active: #bfdbfe;
+  --blue-normal: #3b82f6;
+  --blue-normal-hover: #2563eb;
+  --blue-normal-active: #1d4ed8;
+  --blue-dark: #1e40af;
+  --blue-dark-hover: #1e3a8a;
+  --blue-dark-active: #1e3a8a;
+  --blue-darker: #172554;
+  
+  /* Neutral Colors */
+  --white: #FFFFFF;
+  --black: #000000;
+  --gray-light: #F3F4F6;
+  --gray-medium: #9CA3AF;
+  --gray-dark: #374151;
+
+  /** Ionic Colors - Customized for Sabixão **/
+  
+  /** primary (Orange) **/
+  --ion-color-primary: #f97316;
+  --ion-color-primary-rgb: 249, 115, 22;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #ea580c;
+  --ion-color-primary-tint: #fb923c;
+
+  /** secondary **/
+  --ion-color-secondary: #3b82f6;
+  --ion-color-secondary-rgb: 59, 130, 246;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #2563eb;
+  --ion-color-secondary-tint: #60a5fa;
+
+  /** success (Green) **/
+  --ion-color-success: #22c55e;
+  --ion-color-success-rgb: 34, 197, 94;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #16a34a;
+  --ion-color-success-tint: #4ade80;
+
+  /** danger (Red) **/
+  --ion-color-danger: #ef4444;
+  --ion-color-danger-rgb: 239, 68, 68;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #dc2626;
+  --ion-color-danger-tint: #f87171;
+
+  /** warning **/
+  --ion-color-warning: #fbbf24;
+  --ion-color-warning-rgb: 251, 191, 36;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #f59e0b;
+  --ion-color-warning-tint: #fcd34d;
+
+  /** light **/
+  --ion-color-light: #f3f4f6;
+  --ion-color-light-rgb: 243, 244, 246;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #d1d5db;
+  --ion-color-light-tint: #f9fafb;
+
+  /** medium **/
+  --ion-color-medium: #9ca3af;
+  --ion-color-medium-rgb: 156, 163, 175;
+  --ion-color-medium-contrast: #000000;
+  --ion-color-medium-contrast-rgb: 0, 0, 0;
+  --ion-color-medium-shade: #6b7280;
+  --ion-color-medium-tint: #d1d5db;
+
+  /** dark **/
+  --ion-color-dark: #374151;
+  --ion-color-dark-rgb: 55, 65, 81;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #1f2937;
+  --ion-color-dark-tint: #4b5563;
+
+  /** Background and Text **/
+  --ion-background-color: #ffffff;
+  --ion-background-color-rgb: 255, 255, 255;
+  --ion-text-color: #171717;
+  --ion-text-color-rgb: 23, 23, 23;
+}
+

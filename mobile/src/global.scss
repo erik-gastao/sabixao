@@ -9,6 +9,9 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
+/* Google Fonts - Baloo 2 (Match Web App) */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
 
@@ -24,6 +27,26 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+/* Sabixão Global Styles */
+* {
+  font-family: 'Baloo 2', cursive, sans-serif !important;
+}
+
+body {
+  font-family: 'Baloo 2', cursive, sans-serif;
+}
+
+ion-content {
+  --background: #ffffff;
+}
+
+/* Custom Button Styles */
+ion-button {
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
 
 /**
  * Ionic Dark Mode
