@@ -1,0 +1,83 @@
+.header-info {
+  background: var(--ion-color-light);
+  
+  h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--ion-color-medium);
+  }
+}
+
+.content-wrapper {
+  min-height: 60vh;
+}
+
+.centered-spinner {
+  display: block;
+  margin: 3rem auto;
+}
+
+.empty-state {
+  padding-top: 3rem;
+
+  ion-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    color: var(--ion-color-medium);
+  }
+
+  p {
+    color: var(--ion-color-medium);
+    font-size: 0.9rem;
+  }
+}
+
+.sala-card {
+  margin: 0.5rem 1rem;
+
+  .card-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+
+    ion-card-title {
+      flex: 1;
+      font-size: 1.2rem;
+    }
+  }
+
+  .sala-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      ion-text {
+        &:first-child {
+          font-size: 0.9rem;
+        }
+        
+        &:last-child {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+ion-list {
+  padding: 0;
+  background: transparent;
+}

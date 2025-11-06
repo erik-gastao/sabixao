@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Sabixão - Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="login-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">
+          <h1>🎯 Sabixão</h1>
+          <p>Quiz Multiplayer</p>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <form (ngSubmit)="login()">
+          <ion-item>
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input
+              type="email"
+              [(ngModel)]="credentials.email"
+              name="email"
+              placeholder="seu@email.com"
+              required
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input
+              type="password"
+              [(ngModel)]="credentials.password"
+              name="password"
+              placeholder="••••••"
+              required
+            ></ion-input>
+          </ion-item>
+
+          <ion-button
+            expand="block"
+            type="submit"
+            [disabled]="loading"
+            class="ion-margin-top"
+          >
+            <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+            <span *ngIf="!loading">ENTRAR</span>
+          </ion-button>
+
+          <ion-button
+            expand="block"
+            fill="outline"
+            color="medium"
+            (click)="useDemo()"
+            [disabled]="loading"
+          >
+            Usar Conta Demo
+          </ion-button>
+
+          <ion-text color="medium" class="ion-text-center ion-margin-top">
+            <p class="demo-info">
+              <strong>Conta Demo:</strong><br>
+              Email: demo@sabixao.dev<br>
+              Senha: 123456
+            </p>
+          </ion-text>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,12 +1,14 @@
 # Dependencies
 frontend/node_modules/
 backend/node_modules/
+mobile/node_modules/
 frontend/.pnp
 frontend/.pnp.*
 
 # Testing
 frontend/coverage/
 backend/coverage/
+mobile/coverage/
 
 # Next.js (Frontend)
 frontend/.next/
@@ -16,9 +18,23 @@ frontend/out/
 backend/dist/
 backend/build/
 
+# Mobile (Ionic/Capacitor)
+mobile/www/
+mobile/.angular/
+mobile/android/app/build/
+mobile/android/.gradle/
+mobile/android/build/
+mobile/android/local.properties
+mobile/android/.idea/
+mobile/android/captures/
+mobile/ios/App/build/
+mobile/ios/App/Pods/
+mobile/ios/App/Podfile.lock
+
 # Production
 frontend/build/
 backend/build/
+mobile/build/
 
 # Misc
 .DS_Store

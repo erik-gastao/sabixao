@@ -1,0 +1,32 @@
+{
+  "name": "sabixao-backend",
+  "version": "0.1.0",
+  "description": "Backend API para o Sabixão - servidor Express com TypeScript",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+  "build": "tsc --project tsconfig.json",
+  "start": "node dist/server.js"
+  },
+  "keywords": [
+    "quiz",
+    "express",
+    "typescript",
+    "socket.io"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "uuid": "^11.0.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.16.10",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3"
+  }
+}

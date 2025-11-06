@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Minhas Salas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="loadSalas($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="header-info ion-padding">
+    <h2>Olá, {{ userName }}! 👋</h2>
+    <p>Suas salas de quiz</p>
+  </div>
+
+  <div class="content-wrapper">
+    <ion-spinner *ngIf="loading" name="crescent" class="centered-spinner"></ion-spinner>
+
+    <div *ngIf="!loading && salas.length === 0" class="empty-state ion-text-center ion-padding">
+      <ion-icon name="people" size="large" color="medium"></ion-icon>
+      <h3>Nenhuma sala criada</h3>
+      <p>Clique no botão + para criar sua primeira sala!</p>
+    </div>
+
+    <ion-list *ngIf="!loading && salas.length > 0">
+      <ion-card *ngFor="let sala of salas" class="sala-card">
+        <ion-card-header>
+          <div class="card-title-row">
+            <ion-card-title>{{ sala.name }}</ion-card-title>
+            <ion-badge [color]="getStatusColor(sala.status)">
+              {{ getStatusText(sala.status) }}
+            </ion-badge>
+          </div>
+        </ion-card-header>
+
+        <ion-card-content>
+          <div class="sala-info">
+            <div class="info-item">
+              <ion-text color="medium">PIN:</ion-text>
+              <ion-text><strong>{{ sala.pin }}</strong></ion-text>
+            </div>
+            <div class="info-item">
+              <ion-text color="medium">Max Jogadores:</ion-text>
+              <ion-text>{{ sala.maxPlayers }}</ion-text>
+            </div>
+            <div class="info-item">
+              <ion-text color="medium">Criada em:</ion-text>
+              <ion-text>{{ sala.createdAt | date: 'dd/MM/yyyy' }}</ion-text>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="goToCreateSala()" color="success">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

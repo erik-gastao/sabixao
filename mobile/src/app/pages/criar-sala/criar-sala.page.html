@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/lista-salas"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Criar Nova Sala</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">
+        <h2>🎮 Nova Sala de Quiz</h2>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form (ngSubmit)="createSala()">
+        <ion-item>
+          <ion-label position="floating">Nome da Sala</ion-label>
+          <ion-input
+            type="text"
+            [(ngModel)]="salaData.name"
+            name="name"
+            placeholder="Ex: Quiz de Geografia"
+            required
+          ></ion-input>
+        </ion-item>
+
+        <ion-item class="range-item">
+          <ion-label position="stacked">
+            Máximo de Jogadores: <strong>{{ salaData.maxPlayers }}</strong>
+          </ion-label>
+          <ion-range
+            [(ngModel)]="salaData.maxPlayers"
+            name="maxPlayers"
+            min="5"
+            max="50"
+            step="5"
+            pin="true"
+            ticks="true"
+            snaps="true"
+            color="primary"
+          >
+            <ion-label slot="start">5</ion-label>
+            <ion-label slot="end">50</ion-label>
+          </ion-range>
+        </ion-item>
+
+        <div class="info-box ion-margin-top">
+          <ion-text color="medium">
+            <p><strong>ℹ️ Informações:</strong></p>
+            <ul>
+              <li>Um PIN único será gerado automaticamente</li>
+              <li>Você poderá adicionar questões depois de criar a sala</li>
+              <li>Os jogadores usarão o PIN para entrar na sala</li>
+            </ul>
+          </ion-text>
+        </div>
+
+        <ion-button
+          expand="block"
+          type="submit"
+          [disabled]="loading || !salaData.name"
+          color="success"
+          class="ion-margin-top"
+        >
+          <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+          <span *ngIf="!loading">CRIAR SALA</span>
+        </ion-button>
+
+        <ion-button
+          expand="block"
+          fill="outline"
+          color="medium"
+          routerLink="/lista-salas"
+          [disabled]="loading"
+        >
+          Cancelar
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
